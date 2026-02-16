@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>RegressionTests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>15/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>20/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Feb 16 10:42:47 IST 2026</td>
+<td>Started on:</td><td>Mon Feb 16 17:14:16 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>257 seconds (257043 ms)</td>
+<tr><td>Total time:</td><td>382 seconds (382153 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,62 +76,29 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.CartTest.verifyRemoveProductFromCart()'><b>verifyRemoveProductFromCart</b><br>Test class: tests.CartTest</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[contains(text(),&apos;Cart is empty&apos;)]&quot;}
-  (Session info: chrome=144.0.7559.133)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+<td title='tests.ProductsTest.verifyAddToCartFunctionality()'><b>verifyAddToCartFunctionality</b><br>Test class: tests.ProductsTest</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (a1b8df1428fd86bd5221b27eaca0b29e)] -&gt; xpath: //div[@class=&apos;col-sm-9 padding-right&apos;]//div[2]//div[1]//div[1]//div[2]//div[1]//a[1]] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7c434c104ae07998094cdb9c9fdcf91d, findElement {using=xpath, value=//p[contains(text(),&apos;Cart is empty&apos;)]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62947}, goog:processID: 10244, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62947/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7c434c104ae07998094cdb9c9fdcf91d
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
-	at pages.CartPage.isCartEmptyMessageDisplayed(CartPage.java:76)
-	at tests.CartTest.verifyRemoveProductFromCart(CartTest.java:53)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55022}, goog:processID: 12432, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55022/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a1b8df1428fd86bd5221b27eaca0b29e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.ProductsPage.clickFirstAddToCart(ProductsPage.java:99)
+	at tests.ProductsTest.verifyAddToCartFunctionality(ProductsTest.java:67)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1648537147", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1648537147'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[contains(text(),&apos;Cart is empty&apos;)]&quot;}
-  (Session info: chrome=144.0.7559.133)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace580979398", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace580979398'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (a1b8df1428fd86bd5221b27eaca0b29e)] -&gt; xpath: //div[@class=&apos;col-sm-9 padding-right&apos;]//div[2]//div[1]//div[1]//div[2]//div[1]//a[1]] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.22.0&apos;, revision: &apos;c5f3146703*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7c434c104ae07998094cdb9c9fdcf91d, findElement {using=xpath, value=//p[contains(text(),&apos;Cart is empty&apos;)]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62947}, goog:processID: 10244, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62947/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7c434c104ae07998094cdb9c9fdcf91d
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy14.isDisplayed(Unknown Source)
-	at pages.CartPage.isCartEmptyMessageDisplayed(CartPage.java:76)
-	at tests.CartTest.verifyRemoveProductFromCart(CartTest.java:53)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 144.0.7559.133, chrome: {chromedriverVersion: 144.0.7559.133 (7da823b1d59..., userDataDir: C:\Users\ASUS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55022}, goog:processID: 12432, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55022/devtoo..., se:cdpVersion: 144.0.7559.133, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a1b8df1428fd86bd5221b27eaca0b29e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.ProductsPage.clickFirstAddToCart(ProductsPage.java:99)
+	at tests.ProductsTest.verifyAddToCartFunctionality(ProductsTest.java:67)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
@@ -159,8 +126,8 @@ Session ID: 7c434c104ae07998094cdb9c9fdcf91d
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>16</td>
-<td>tests.CartTest@6cc4cdb9</td></tr>
+<td>10</td>
+<td>tests.ProductsTest@2ad48653</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -171,80 +138,105 @@ Session ID: 7c434c104ae07998094cdb9c9fdcf91d
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='tests.ContactUsTest.verifyFileUploadFieldEnabled()'><b>verifyFileUploadFieldEnabled</b><br>Test class: tests.ContactUsTest</td>
-<td></td>
-<td>2</td>
-<td>tests.ContactUsTest@1df8da7a</td></tr>
-<tr>
-<td title='tests.HomePageTest.verifyCategorySectionVisible()'><b>verifyCategorySectionVisible</b><br>Test class: tests.HomePageTest</td>
-<td></td>
-<td>0</td>
-<td>tests.HomePageTest@50f6ac94</td></tr>
-<tr>
-<td title='tests.ContactUsTest.verifyContactUsPageLoads()'><b>verifyContactUsPageLoads</b><br>Test class: tests.ContactUsTest</td>
-<td></td>
-<td>4</td>
-<td>tests.ContactUsTest@1df8da7a</td></tr>
-<tr>
-<td title='tests.CartTest.verifyCartPageNavigation()'><b>verifyCartPageNavigation</b><br>Test class: tests.CartTest</td>
-<td></td>
-<td>23</td>
-<td>tests.CartTest@6cc4cdb9</td></tr>
-<tr>
-<td title='tests.LoginTest.verifyLoginWithValidCredentials()'><b>verifyLoginWithValidCredentials</b><br>Test class: tests.LoginTest</td>
-<td></td>
-<td>3</td>
-<td>tests.LoginTest@28194a50</td></tr>
-<tr>
-<td title='tests.ContactUsTest.verifyContactUsFormSubmission()'><b>verifyContactUsFormSubmission</b><br>Test class: tests.ContactUsTest</td>
-<td></td>
-<td>33</td>
-<td>tests.ContactUsTest@1df8da7a</td></tr>
-<tr>
-<td title='tests.ContactUsTest.verifyInvalidEmailFormat()'><b>verifyInvalidEmailFormat</b><br>Test class: tests.ContactUsTest</td>
-<td></td>
-<td>15</td>
-<td>tests.ContactUsTest@1df8da7a</td></tr>
-<tr>
-<td title='tests.CartTest.verifyProductDetailsInCart()'><b>verifyProductDetailsInCart</b><br>Test class: tests.CartTest</td>
-<td></td>
-<td>12</td>
-<td>tests.CartTest@6cc4cdb9</td></tr>
-<tr>
-<td title='tests.HomePageTest.verifyFeaturedItemsSection()'><b>verifyFeaturedItemsSection</b><br>Test class: tests.HomePageTest</td>
-<td></td>
-<td>3</td>
-<td>tests.HomePageTest@50f6ac94</td></tr>
-<tr>
-<td title='tests.LoginTest.verifyLogoutFunctionality()'><b>verifyLogoutFunctionality</b><br>Test class: tests.LoginTest</td>
-<td></td>
-<td>5</td>
-<td>tests.LoginTest@28194a50</td></tr>
-<tr>
-<td title='tests.HomePageTest.verifyScrollUpFeature()'><b>verifyScrollUpFeature</b><br>Test class: tests.HomePageTest</td>
-<td></td>
-<td>0</td>
-<td>tests.HomePageTest@50f6ac94</td></tr>
-<tr>
-<td title='tests.ContactUsTest.verifyFormSubmissionWithoutData()'><b>verifyFormSubmissionWithoutData</b><br>Test class: tests.ContactUsTest</td>
-<td></td>
-<td>48</td>
-<td>tests.ContactUsTest@1df8da7a</td></tr>
-<tr>
 <td title='tests.LoginTest.verifyLoginWithInvalidCredentials()'><b>verifyLoginWithInvalidCredentials</b><br>Test class: tests.LoginTest</td>
 <td></td>
-<td>2</td>
-<td>tests.LoginTest@28194a50</td></tr>
-<tr>
-<td title='tests.HomePageTest.verifyFooterVisible()'><b>verifyFooterVisible</b><br>Test class: tests.HomePageTest</td>
-<td></td>
-<td>0</td>
-<td>tests.HomePageTest@50f6ac94</td></tr>
+<td>1</td>
+<td>tests.LoginTest@6bb4dd34</td></tr>
 <tr>
 <td title='tests.HomePageTest.verifyHomePageLoaded()'><b>verifyHomePageLoaded</b><br>Test class: tests.HomePageTest</td>
 <td></td>
 <td>0</td>
-<td>tests.HomePageTest@50f6ac94</td></tr>
+<td>tests.HomePageTest@32115b28</td></tr>
+<tr>
+<td title='tests.ContactUsTest.verifyContactUsFormSubmission()'><b>verifyContactUsFormSubmission</b><br>Test class: tests.ContactUsTest</td>
+<td></td>
+<td>2</td>
+<td>tests.ContactUsTest@1f9f6368</td></tr>
+<tr>
+<td title='tests.ProductsTest.verifyAllProductsDisplayed()'><b>verifyAllProductsDisplayed</b><br>Test class: tests.ProductsTest</td>
+<td></td>
+<td>3</td>
+<td>tests.ProductsTest@2ad48653</td></tr>
+<tr>
+<td title='tests.ContactUsTest.verifyInvalidEmailFormat()'><b>verifyInvalidEmailFormat</b><br>Test class: tests.ContactUsTest</td>
+<td></td>
+<td>2</td>
+<td>tests.ContactUsTest@1f9f6368</td></tr>
+<tr>
+<td title='tests.HomePageTest.verifyCategorySectionVisible()'><b>verifyCategorySectionVisible</b><br>Test class: tests.HomePageTest</td>
+<td></td>
+<td>0</td>
+<td>tests.HomePageTest@32115b28</td></tr>
+<tr>
+<td title='tests.ContactUsTest.verifyFileUploadFieldEnabled()'><b>verifyFileUploadFieldEnabled</b><br>Test class: tests.ContactUsTest</td>
+<td></td>
+<td>1</td>
+<td>tests.ContactUsTest@1f9f6368</td></tr>
+<tr>
+<td title='tests.ContactUsTest.verifyContactUsPageLoads()'><b>verifyContactUsPageLoads</b><br>Test class: tests.ContactUsTest</td>
+<td></td>
+<td>1</td>
+<td>tests.ContactUsTest@1f9f6368</td></tr>
+<tr>
+<td title='tests.ProductsTest.verifySearchProduct()'><b>verifySearchProduct</b><br>Test class: tests.ProductsTest</td>
+<td></td>
+<td>11</td>
+<td>tests.ProductsTest@2ad48653</td></tr>
+<tr>
+<td title='tests.HomePageTest.verifyScrollUpFeature()'><b>verifyScrollUpFeature</b><br>Test class: tests.HomePageTest</td>
+<td></td>
+<td>0</td>
+<td>tests.HomePageTest@32115b28</td></tr>
+<tr>
+<td title='tests.CartTest.verifyCartPageNavigation()'><b>verifyCartPageNavigation</b><br>Test class: tests.CartTest</td>
+<td></td>
+<td>1</td>
+<td>tests.CartTest@54e041a4</td></tr>
+<tr>
+<td title='tests.CartTest.verifyProductDetailsInCart()'><b>verifyProductDetailsInCart</b><br>Test class: tests.CartTest</td>
+<td></td>
+<td>10</td>
+<td>tests.CartTest@54e041a4</td></tr>
+<tr>
+<td title='tests.CartTest.verifyRemoveProductFromCart()'><b>verifyRemoveProductFromCart</b><br>Test class: tests.CartTest</td>
+<td></td>
+<td>5</td>
+<td>tests.CartTest@54e041a4</td></tr>
+<tr>
+<td title='tests.LoginTest.verifyLogoutFunctionality()'><b>verifyLogoutFunctionality</b><br>Test class: tests.LoginTest</td>
+<td></td>
+<td>3</td>
+<td>tests.LoginTest@6bb4dd34</td></tr>
+<tr>
+<td title='tests.ProductsTest.verifyViewProductNavigation()'><b>verifyViewProductNavigation</b><br>Test class: tests.ProductsTest</td>
+<td></td>
+<td>117</td>
+<td>tests.ProductsTest@2ad48653</td></tr>
+<tr>
+<td title='tests.ContactUsTest.verifyFormSubmissionWithoutData()'><b>verifyFormSubmissionWithoutData</b><br>Test class: tests.ContactUsTest</td>
+<td></td>
+<td>2</td>
+<td>tests.ContactUsTest@1f9f6368</td></tr>
+<tr>
+<td title='tests.HomePageTest.verifyFeaturedItemsSection()'><b>verifyFeaturedItemsSection</b><br>Test class: tests.HomePageTest</td>
+<td></td>
+<td>0</td>
+<td>tests.HomePageTest@32115b28</td></tr>
+<tr>
+<td title='tests.ProductsTest.verifyProductsPageLoads()'><b>verifyProductsPageLoads</b><br>Test class: tests.ProductsTest</td>
+<td></td>
+<td>2</td>
+<td>tests.ProductsTest@2ad48653</td></tr>
+<tr>
+<td title='tests.HomePageTest.verifyFooterVisible()'><b>verifyFooterVisible</b><br>Test class: tests.HomePageTest</td>
+<td></td>
+<td>0</td>
+<td>tests.HomePageTest@32115b28</td></tr>
+<tr>
+<td title='tests.LoginTest.verifyLoginWithValidCredentials()'><b>verifyLoginWithValidCredentials</b><br>Test class: tests.LoginTest</td>
+<td></td>
+<td>26</td>
+<td>tests.LoginTest@6bb4dd34</td></tr>
 </table><p>
 </body>
 </html>
