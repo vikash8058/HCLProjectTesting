@@ -1,5 +1,7 @@
 package base;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
@@ -11,6 +13,7 @@ public class BaseTest {
 	public void setUp() {
 
 		driver = DriverFactory.initDriver();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://automationexercise.com/");
 	}
 
