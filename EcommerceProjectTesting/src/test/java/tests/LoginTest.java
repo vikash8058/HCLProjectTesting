@@ -17,9 +17,6 @@ public class LoginTest extends BaseTest {
         loginPage.openLoginPage();
     }
 
-    // ===============================
-    // TC 2: Login with valid details
-    // ===============================
     @Test(priority = 1)
     public void verifyLoginWithValidCredentials() {
 
@@ -31,9 +28,7 @@ public class LoginTest extends BaseTest {
         );
     }
 
-    // =====================================
-    // TC 3: Login with invalid credentials
-    // =====================================
+ 
     @Test(priority = 2)
     public void verifyLoginWithInvalidCredentials() {
 
@@ -45,9 +40,7 @@ public class LoginTest extends BaseTest {
         );
     }
 
-    // ============================
-    // TC 4: Logout functionality
-    // ============================
+ 
     @Test(priority = 3)
     public void verifyLogoutFunctionality() {
 
