@@ -39,7 +39,7 @@ public class CartPage extends BasePage {
 	private WebElement removeButton;
 
 	// Empty cart message
-	@FindBy(xpath = "//p[contains(text(),'Cart is empty')]")
+	@FindBy(xpath = "//b[contains(text(),'Cart is empty')]")
 	private WebElement emptyCartMessage;
 
 	// ================= METHODS =================
