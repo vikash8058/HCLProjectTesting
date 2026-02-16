@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [AutomationSuite]">
+  <listeners>
+    <listener class-name="listeners.TestListener"/>
+  </listeners>
+  <test thread-count="5" name="RegressionTests(failed)">
+    <classes>
+      <class name="tests.HomePageTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="verifyFooterVisible"/>
+          <include name="verifyHomePageLoaded"/>
+          <include name="verifyScrollUpFeature"/>
+          <include name="verifyFeaturedItemsSection"/>
+        </methods>
+      </class> <!-- tests.HomePageTest -->
+      <class name="tests.ContactUsTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="verifyInvalidEmailFormat"/>
+          <include name="verifyFileUploadFieldEnabled"/>
+          <include name="verifyFormSubmissionWithoutData"/>
+          <include name="verifyContactUsFormSubmission"/>
+          <include name="verifyContactUsPageLoads"/>
+        </methods>
+      </class> <!-- tests.ContactUsTest -->
+    </classes>
+  </test> <!-- RegressionTests(failed) -->
+</suite> <!-- Failed suite [AutomationSuite] -->
