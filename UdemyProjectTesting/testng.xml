@@ -8,6 +8,7 @@
 
 		<classes>
 			<class name="tests.HomePageTest"/>
+			<class name="tests.SearchResultsTest"/>
 		</classes>
 
 	</test>
