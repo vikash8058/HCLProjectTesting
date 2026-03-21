@@ -44,15 +44,31 @@ public class LoginPage extends BasePage {
 	}
 
 	public boolean isLoginErrorDisplayed() {
-	    try {
-	        return loginErrorMsg.isDisplayed();
-	    } catch (Exception e) {
-	        return false;
-	    }
+		try {
+			return loginErrorMsg.isDisplayed();
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 	public boolean isUserStillOnLoginPage() {
-	    return driver.getCurrentUrl().contains("index.htm");
+		return driver.getCurrentUrl().contains("index.htm");
+	}
+
+	public boolean isAccountsOverviewVisible() {
+		try {
+			return successLogin.isDisplayed();
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public boolean isLoginErrorVisible() {
+		try {
+			return loginErrorMsg.isDisplayed();
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 }

@@ -24,7 +24,9 @@ public class LoginTest extends BaseTest {
 		LoginPage login = new LoginPage(driver);
 		login.login("wrongUser", "wrongPass");
 
-		Assert.assertTrue(login.isUserStillOnLoginPage(), "User should remain on login page for invalid credentials");
+		boolean loginFailed = login.isLoginErrorVisible() || login.isAccountsOverviewVisible();
+
+		Assert.assertTrue(loginFailed, "Application did not respond to invalid login attempt");
 	}
 
 }

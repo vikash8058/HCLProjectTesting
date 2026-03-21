@@ -1,0 +1,15 @@
+<suite name="Udemy Suit">
+
+	<listeners>
+		<listener class-name="listeners.TestListener" />
+	</listeners>
+
+	<test name="Udemy Search Course">
+
+		<classes>
+			
+		</classes>
+
+	</test>
+
+</suite>
