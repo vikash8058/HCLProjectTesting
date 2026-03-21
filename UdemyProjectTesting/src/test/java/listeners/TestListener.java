@@ -24,7 +24,7 @@ public class TestListener implements ITestListener {
 
 		test.set(extentTest);
 	}
-
+   
 	@Override
 	public void onTestFailure(ITestResult result) {
 
@@ -35,7 +35,7 @@ public class TestListener implements ITestListener {
 	}
 
 	@Override
-	public void onTestSuccess(ITestResult result) {
+	public void onTestSuccess(ITestResult result ) {
 		test.get().pass("Test Passed");
 	}
 

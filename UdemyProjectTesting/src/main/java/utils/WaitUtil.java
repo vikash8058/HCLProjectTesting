@@ -12,7 +12,7 @@ public class WaitUtil {
 
     public static void waitForElementVisible(WebDriver driver, WebElement element) {
         new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT))
-                .until(ExpectedConditions.visibilityOf(element));
+                .until(ExpectedConditions.visibilityOf(element) );
     }
 
     public static void waitForElementClickable(WebDriver driver, WebElement element) {

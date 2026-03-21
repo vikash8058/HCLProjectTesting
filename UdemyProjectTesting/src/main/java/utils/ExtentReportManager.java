@@ -12,11 +12,11 @@ public class ExtentReportManager {
 	public static ExtentReports getInstance() {
 
 		if (extent == null) {
-
-			ExtentSparkReporter spark = new ExtentSparkReporter("reports/ExtentReport.html");
+   
+			ExtentSparkReporter spark  = new ExtentSparkReporter("reports/ExtentReport.html ");   
 
 			extent = new ExtentReports();
-			extent.attachReporter(spark);
+			extent.attachReporter(spark);   
 		}
 
 		return extent;
