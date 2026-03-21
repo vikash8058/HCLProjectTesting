@@ -1,5 +1,7 @@
 package pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,33 +14,21 @@ public class SearchResultsPage extends BasePage {
         super(driver);
     }
 
-    @FindBy(xpath = "//div[contains(@class,'course-list--container')]")
-    private WebElement resultsContainer;
+    @FindBy(xpath = "//a[contains(@href,'/course/')]")
+    private List<WebElement> courseList;
 
     @FindBy(xpath = "(//a[contains(@href,'/course/')])[1]")
     private WebElement firstCourseCard;
 
-    @FindBy(xpath = "//button[contains(text(),'Ratings')]")
+    @FindBy(xpath = "//button[contains(text(),'Ratings') or contains(text(),'Rating')]")
     private WebElement ratingsFilterButton;
-
-    @FindBy(xpath = "//span[contains(@class,'no-results')]")
-    private WebElement noResultsMessage;
 
     public boolean isResultsDisplayed() {
         try {
-            WaitUtil.waitForElementVisible(driver, resultsContainer);
-            return resultsContainer.isDisplayed();
+            WaitUtil.waitForElementVisible(driver, courseList.get(0));
+            return courseList.size() > 0;
         } catch (Exception e) {
             return false;
-        }
-    }
-
-    public void applyRatingsFilter() {
-        try {
-            WaitUtil.waitForElementClickable(driver, ratingsFilterButton);
-            ratingsFilterButton.click();
-        } catch (Exception e) {
-            // if filter not available, continue
         }
     }
 
@@ -46,12 +36,17 @@ public class SearchResultsPage extends BasePage {
         WaitUtil.waitForElementClickable(driver, firstCourseCard);
         firstCourseCard.click();
     }
-
-    public boolean isNoResultsMessageDisplayed() {
+    
+    public void applyRatingsFilter() {
         try {
-            return noResultsMessage.isDisplayed();
+            WaitUtil.waitForElementClickable(driver, ratingsFilterButton);
+            ratingsFilterButton.click();
         } catch (Exception e) {
-            return false;
+            System.out.println("Rating filter not available");
         }
+    }
+
+    public int getCourseCount() {
+        return courseList.size();
     }
 }

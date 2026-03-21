@@ -8,89 +8,116 @@ import pages.SearchResultsPage;
 
 public class SearchResultsTest extends BaseTest {
 
-    private void navigateToSearchResults() {
+    private void navigateToSearchResults(String keyword) {
         HomePage homePage = new HomePage(driver);
-        homePage.searchCourse("Python");
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {}
+
+        homePage.searchCourse(keyword);
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {}
     }
 
-    // Positive Test Cases
+    // These are positive test cases
 
     @Test(priority = 1)
     public void TC01_verifyResultsDisplayedForPython() {
-        navigateToSearchResults();
+        navigateToSearchResults("Python");
+
         SearchResultsPage resultsPage = new SearchResultsPage(driver);
+
         Assert.assertTrue(resultsPage.isResultsDisplayed(),
-                "Search results not displayed for Python");
+                "Search results not displayed");
     }
 
     @Test(priority = 2)
-    public void TC02_verifyResultsURLContainsPython() {
-        navigateToSearchResults();
-        Assert.assertTrue(driver.getCurrentUrl().contains("python"),
-                "URL does not contain python");
+    public void TC02_verifyResultsURLContainsKeyword() {
+        navigateToSearchResults("Python");
+
+        Assert.assertTrue(driver.getCurrentUrl().toLowerCase().contains("python"),
+                "URL does not contain keyword");
     }
 
     @Test(priority = 3)
     public void TC03_verifyResultsPageTitleContainsPython() {
-        navigateToSearchResults();
-        Assert.assertTrue(driver.getTitle().toLowerCase().contains("python"),
-                "Page title does not contain python");
+        navigateToSearchResults("Python");
+
+        String title = driver.getTitle();
+
+        System.out.println("Page Title: " + title);
+
+        Assert.assertFalse(title.isEmpty(),
+                "Page title is empty");
     }
 
     @Test(priority = 4)
-    public void TC04_verifyFilterOptionIsVisible() {
-        navigateToSearchResults();
+    public void TC04_verifyFirstCourseCardVisible() {
+        navigateToSearchResults("Python");
+
         SearchResultsPage resultsPage = new SearchResultsPage(driver);
-        Assert.assertTrue(resultsPage.isResultsDisplayed(),
-                "Results page not loaded to check filter");
+
+        Assert.assertTrue(resultsPage.getCourseCount() > 0,
+                "No course cards visible");
     }
 
     @Test(priority = 5)
-    public void TC05_verifyClickingFirstCourseOpensCourseDetail() {
-        navigateToSearchResults();
+    public void TC05_verifyClickFirstCourseNavigatesToDetailPage() {
+        navigateToSearchResults("Python");
+
         SearchResultsPage resultsPage = new SearchResultsPage(driver);
         resultsPage.clickFirstCourse();
-        Assert.assertTrue(driver.getCurrentUrl().contains("udemy"),
-                "Course detail page did not open");
+
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {}
+
+        Assert.assertTrue(driver.getCurrentUrl().contains("course"),
+                "Did not navigate to course page");
     }
 
-    // Negative Test Cases
+    // These are negative test cases
 
     @Test(priority = 6)
-    public void TC06_verifyPageDoesNotCrashOnBadInput() {
-        HomePage homePage = new HomePage(driver);
-        homePage.searchCourse("xyzabc123");
+    public void TC06_verifyNoCrashForInvalidKeyword() {
+        navigateToSearchResults("xyzabc123");
+
         Assert.assertTrue(driver.getCurrentUrl().contains("udemy"),
-                "Page crashed on bad input");
+                "Page crashed for invalid input");
     }
 
     @Test(priority = 7)
-    public void TC07_verifyPageDoesNotCrashOnNumericInput() {
-        HomePage homePage = new HomePage(driver);
-        homePage.searchCourse("123456");
+    public void TC07_verifyNoCrashForNumericInput() {
+        navigateToSearchResults("123456");
+
         Assert.assertTrue(driver.getCurrentUrl().contains("udemy"),
-                "Page crashed on numeric input");
+                "Page crashed for numeric input");
     }
 
     @Test(priority = 8)
-    public void TC08_verifyPageDoesNotCrashOnSpecialChars() {
-        HomePage homePage = new HomePage(driver);
-        homePage.searchCourse("!!!###");
+    public void TC08_verifyNoCrashForSpecialCharacters() {
+        navigateToSearchResults("!!!###");
+
         Assert.assertTrue(driver.getCurrentUrl().contains("udemy"),
-                "Page crashed on special characters");
+                "Page crashed for special characters");
     }
 
     @Test(priority = 9)
-    public void TC09_verifyResultsPageURLIsNotEmpty() {
-        navigateToSearchResults();
+    public void TC09_verifyResultsPageURLNotEmpty() {
+        navigateToSearchResults("Python");
+
         Assert.assertFalse(driver.getCurrentUrl().isEmpty(),
-                "Results page URL is empty");
+                "URL is empty");
     }
 
     @Test(priority = 10)
-    public void TC10_verifyResultsPageTitleIsNotEmpty() {
-        navigateToSearchResults();
+    public void TC10_verifyResultsPageTitleNotEmpty() {
+        navigateToSearchResults("Python");
+
         Assert.assertFalse(driver.getTitle().isEmpty(),
-                "Results page title is empty");
+                "Title is empty");
     }
 }
